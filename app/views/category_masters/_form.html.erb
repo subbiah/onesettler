@@ -1,0 +1,21 @@
+<%= form_for(@category_master) do |f| %>
+  <% if @category_master.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@category_master.errors.count, "error") %> prohibited this category_master from being saved:</h2>
+
+      <ul>
+      <% @category_master.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :categoryname %><br>
+    <%= f.text_field :categoryname %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

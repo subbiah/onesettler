@@ -1,0 +1,35 @@
+<h1>Listing profile_question_masters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Section</th>
+      <th>Questionname</th>
+      <th>Min length</th>
+      <th>Max length</th>
+      <th>Question type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profile_question_masters.each do |profile_question_master| %>
+      <tr>
+        <td><%= profile_question_master.section_id %></td>
+        <td><%= profile_question_master.questionname %></td>
+        <td><%= profile_question_master.min_length %></td>
+        <td><%= profile_question_master.max_length %></td>
+        <td><%= profile_question_master.question_type %></td>
+        <td><%= link_to 'Show', profile_question_master %></td>
+        <td><%= link_to 'Edit', edit_profile_question_master_path(profile_question_master) %></td>
+        <td><%= link_to 'Destroy', profile_question_master, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Profile question master', new_profile_question_master_path %>

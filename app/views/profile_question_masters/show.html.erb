@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @profile_question_master.section_id %>
+</p>
+
+<p>
+  <strong>Questionname:</strong>
+  <%= @profile_question_master.questionname %>
+</p>
+
+<p>
+  <strong>Min length:</strong>
+  <%= @profile_question_master.min_length %>
+</p>
+
+<p>
+  <strong>Max length:</strong>
+  <%= @profile_question_master.max_length %>
+</p>
+
+<p>
+  <strong>Question type:</strong>
+  <%= @profile_question_master.question_type %>
+</p>
+
+<%= link_to 'Edit', edit_profile_question_master_path(@profile_question_master) %> |
+<%= link_to 'Back', profile_question_masters_path %>

@@ -1,0 +1,25 @@
+<h1>Listing service_type_masters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @service_type_masters.each do |service_type_master| %>
+      <tr>
+        <td><%= link_to 'Show', service_type_master %></td>
+        <td><%= link_to 'Edit', edit_service_type_master_path(service_type_master) %></td>
+        <td><%= link_to 'Destroy', service_type_master, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Service type master', new_service_type_master_path %>

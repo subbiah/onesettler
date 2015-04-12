@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  section_id: 1
+  questionname: MyString
+  min_length: 1
+  max_length: 1
+  question_type: MyString
+
+two:
+  section_id: 1
+  questionname: MyString
+  min_length: 1
+  max_length: 1
+  question_type: MyString

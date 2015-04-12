@@ -1,0 +1,51 @@
+<%= form_for(@merchant) do |f| %>
+<% if @merchant.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@merchant.errors.count, "error") %> prohibited this merchant from being saved:</h2>
+
+	<ul>
+		<% @merchant.errors.full_messages.each do |msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+<div class="field">
+	Category
+	<br>
+	 
+		<select name="category" onchange="categoryfn(this.value);">
+			<% @category.each do |c| %>
+			<option value="<%= c.id %>" ><%= c.categoryname %></value>
+			<%end%>
+		</select>
+	 
+</div>
+
+<div class="field">
+	Pproduct Description
+	<br>
+	<%if  @cat_id%>
+		<select name="category" onchange="categoryfn(this.value);">
+			<% @product.each do |p| %>
+			<option value="<%= p.id %>" ><%= p.categoryname %></value>
+			<%end%>
+		</select>
+<%end%>
+</div>
+<div class="actions">
+	<%= f.submit %>
+</div>
+<% end %>
+<script>
+	function categoryfn(cat){
+		alert(cat);
+		$.ajax({url:'<% url_for category_ajax_path %>',
+		data:{"cat_id": cat},
+		dataType:'script'
+		})
+	
+	}
+</script> 
